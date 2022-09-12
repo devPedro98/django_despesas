@@ -1,0 +1,12 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<h1>Detalhes da despesa</h1>
+<ul>
+    <li><b>Descrição</b>{{ object.description }}</li>
+    <li><b>Cliente</b>{{ object.customer|default:"---" }}</li>
+    <li><b>Valor:</b>{{ object.value }}</li>
+    <li><b>Data de Pagamento:</b>{{ object.payment_date|date:"d/m/Y"|default:"---" }}</li>
+</ul>
+<a href="{% url 'expense:url_expense_list' %}"><i class="fa-solid fa-left-long"></i></a>
+{% endblock content %}
